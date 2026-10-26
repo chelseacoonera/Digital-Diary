@@ -1,0 +1,21 @@
+{
+  "name": "MORI — Digital Diary",
+  "short_name": "MORI",
+  "description": "A tiny place for your thoughts. Mood tracker, journal, calendar & memories.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7f0",
+  "theme_color": "#fff7f0",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

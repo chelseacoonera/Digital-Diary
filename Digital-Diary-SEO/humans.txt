@@ -1,0 +1,9 @@
+/* TEAM */
+Developer: chelseacoonera
+Site: https://digitaldiary.my.id/
+Instagram: https://www.instagram.com/chllsenr/
+
+/* SITE */
+Last update: 2026-10-26
+Standards: HTML5, CSS3, JavaScript
+Components: Client-side only (localStorage)

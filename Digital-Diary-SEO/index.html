@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7f0">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Primary SEO -->
+  <title>MORI — Digital Diary | Mood Tracker, Journal &amp; Memories</title>
+  <meta name="description" content="MORI is a free, private, client-side digital diary. Track your mood, write journal entries, view a mood calendar, and keep precious memories — all stored only in your browser.">
+  <meta name="keywords" content="digital diary, mood tracker, journal online, private diary, mood calendar, personal journal, client-side diary, MORI">
+  <meta name="author" content="MORI Digital Diary">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://digitaldiary.my.id/">
+
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://digitaldiary.my.id/">
+  <meta property="og:title" content="MORI — Digital Diary">
+  <meta property="og:description" content="A tiny place for your thoughts. Mood tracker, journal, calendar &amp; memories. Private &amp; free.">
+  <meta property="og:image" content="https://digitaldiary.my.id/og-image.png">
+  <meta property="og:image:secure_url" content="https://digitaldiary.my.id/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MORI Digital Diary — A tiny place for your thoughts">
+  <meta property="og:site_name" content="MORI Digital Diary">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="id_ID">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://digitaldiary.my.id/">
+  <meta name="twitter:title" content="MORI — Digital Diary">
+  <meta name="twitter:description" content="A tiny place for your thoughts. Mood tracker, journal, calendar &amp; memories.">
+  <meta name="twitter:image" content="https://digitaldiary.my.id/og-image.png">
+  <meta name="twitter:image:alt" content="MORI Digital Diary">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Preconnect for performance (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="dns-prefetch" href="https://silverhawk.web.id">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MORI — Digital Diary",
+    "url": "https://digitaldiary.my.id/",
+    "description": "A free, private, client-side digital diary with mood tracker, journal, calendar and memories. All data stays in your browser.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "chelseacoonera"
+    },
+    "image": "https://digitaldiary.my.id/og-image.png",
+    "screenshot": "https://digitaldiary.my.id/og-image.png"
+  }
+  </script>
+
+  <!-- Existing lock CSS kept -->
+  <link rel="stylesheet" href="https://silverhawk.web.id/lock/lock.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-shlock-mode="ultimate" data-shlock-domain="" data-shlock-brand="DIGITAL DIARY" data-shlock-social="https://www.instagram.com/chllsenr/">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">M</span><div><strong>MORI</strong><small>digital diary</small></div></div>
+      <nav>
+        <button class="nav-btn active" data-page="home">⌂ <span>Home</span></button>
+        <button class="nav-btn" data-page="diary">✎ <span>My Diary</span></button>
+        <button class="nav-btn" data-page="mood">☻ <span>Mood Tracker</span></button>
+        <button class="nav-btn" data-page="memories">▧ <span>Memories</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-btn" data-page="settings">⚙ <span>Settings</span></button>
+        <p>Made for little moments ♡</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow" id="todayLabel"></span>
+          <h1 id="greeting">Good morning ✨</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button>
+          <button class="primary-btn" id="newEntryBtn">＋ New Entry</button>
+        </div>
+      </header>
+
+      <section id="home" class="page active">
+        <div class="hero-card">
+          <div>
+            <span class="eyebrow">A tiny place for your thoughts</span>
+            <h2>How are you feeling today?</h2>
+            <p>Write it down. Keep the little moments.</p>
+            <button class="dark-btn" id="heroWriteBtn">Write today's diary →</button>
+          </div>
+          <div class="hero-art">✿</div>
+        </div>
+
+        <div class="section-head"><div><span class="eyebrow">Today</span><h3>Your little check-in</h3></div></div>
+        <div class="mood-row" id="homeMoodRow"></div>
+
+        <div class="grid-2">
+          <article class="card quote-card">
+            <span class="eyebrow">Daily note</span>
+            <blockquote id="quoteText"></blockquote>
+            <button class="text-btn" id="newQuoteBtn">Another note ↻</button>
+          </article>
+          <article class="card">
+            <div class="card-title"><div><span class="eyebrow">Overview</span><h3>This month</h3></div><span class="mini-spark">✦</span></div>
+            <div class="stats" id="overviewStats"></div>
+          </article>
+        </div>
+
+        <div class="section-head"><div><span class="eyebrow">Recent</span><h3>Latest memories</h3></div><button class="text-btn" data-page-link="diary">View all →</button></div>
+        <div id="recentEntries" class="entry-list"></div>
+      </section>
+
+      <section id="diary" class="page">
+        <div class="section-head">
+          <div><span class="eyebrow">Your words</span><h2>My Diary</h2></div>
+          <button class="primary-btn" id="diaryNewBtn">＋ New Entry</button>
+        </div>
+        <div class="toolbar">
+          <input id="searchInput" type="search" placeholder="Search your diary...">
+          <select id="tagFilter"><option value="all">All tags</option></select>
+        </div>
+        <div id="allEntries" class="entry-list"></div>
+      </section>
+
+      <section id="mood" class="page">
+        <div class="section-head"><div><span class="eyebrow">Check in</span><h2>Mood Tracker</h2></div></div>
+        <div class="card mood-picker-card">
+          <span class="eyebrow">Today's mood</span>
+          <h3 id="moodPrompt">What feels most like you?</h3>
+          <div class="mood-grid" id="moodGrid"></div>
+          <p class="saved-message" id="moodSaved"></p>
+        </div>
+        <div class="card">
+          <div class="card-title"><div><span class="eyebrow">Your month</span><h3>Mood calendar</h3></div><span id="monthName"></span></div>
+          <div class="calendar" id="calendar"></div>
+        </div>
+      </section>
+
+      <section id="memories" class="page">
+        <div class="section-head"><div><span class="eyebrow">Scrapbook</span><h2>Memories</h2></div></div>
+        <div id="memoryGrid" class="memory-grid"></div>
+      </section>
+
+      <section id="settings" class="page">
+        <div class="section-head"><div><span class="eyebrow">Personalize</span><h2>Settings</h2></div></div>
+        <div class="card settings-card">
+          <label>Diary display name <input id="nameInput" maxlength="24" placeholder="Your name"></label>
+          <label>Default theme
+            <select id="themeSelect"><option value="light">Soft light</option><option value="dark">Night mode</option></select>
+          </label>
+          <div class="settings-actions">
+            <button class="primary-btn" id="saveSettingsBtn">Save settings</button>
+            <button class="outline-btn" id="exportBtn">Export diary JSON</button>
+            <button class="danger-btn" id="clearBtn">Clear all local data</button>
+          </div>
+          <p class="hint">Your entries stay in this browser using localStorage. GitHub Pages does not store your private diary entries.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="entryModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close-btn" id="closeModal">×</button>
+      <span class="eyebrow">New memory</span>
+      <h2 id="modalTitle">Write your day</h2>
+      <form id="entryForm">
+        <input type="hidden" id="entryId">
+        <label>Title <input id="entryTitle" required maxlength="80" placeholder="A little title..."></label>
+        <div class="form-row">
+          <label>Date <input type="date" id="entryDate" required></label>
+          <label>Mood <select id="entryMood"></select></label>
+        </div>
+        <label>Tags <input id="entryTags" maxlength="100" placeholder="school, friends, random"></label>
+        <label>What happened? <textarea id="entryText" required rows="7" placeholder="Tell MORI about your day..."></textarea></label>
+        <div class="form-row">
+          <label>Favorite song <input id="entrySong" maxlength="80" placeholder="Artist — Song"></label>
+          <label>Day rating <select id="entryRating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label>
+        </div>
+        <label class="upload-label">Memory photo <input type="file" id="entryImage" accept="image/*"></label>
+        <img id="imagePreview" class="image-preview" alt="" hidden>
+        <button class="dark-btn full" type="submit">Save this memory ♡</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+<script src="https://silverhawk.web.id/lock/lock.js"></script>
+  </body>
+</html>
